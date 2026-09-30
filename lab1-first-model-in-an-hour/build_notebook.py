@@ -395,7 +395,7 @@ Finish this sentence in your own words: *"An AI model is... and it can go wrong 
 ### Want to keep going?
 - Try training for 10 epochs instead of 5. Does it keep getting better?
 - Look up **convolutional neural networks (CNNs)**. They're designed for images and can beat 90% on this dataset.
-- [LINK_PLACEHOLDER: more free resources from Laurence]
+- More from me: [my blog](https://laurencemoroney.com) and [my PyTorch book](https://link.amazon/B0eNBlqeN)
 
 Thanks for learning with me. Keep building, keep asking questions. — Laurence
 """)
