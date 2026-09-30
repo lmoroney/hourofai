@@ -1,0 +1,18 @@
+# Verification run: 2026-09-30 (PT)
+- Environment: box (Linux, Python 3.13.5), torch 2.14.1+cpu, transformers 5.18.0, CPU only, no HF token.
+- Command: `jupyter nbconvert --to notebook --execute how_chatbots_really_work.ipynb --output how_chatbots_really_work.executed.ipynb`
+- Result: all 18 code cells ran with no errors.
+- Models: HuggingFaceTB/SmolLM2-135M (base) and HuggingFaceTB/SmolLM2-135M-Instruct (chat); 134.5M parameters each; both Apache-2.0.
+- **Download size:** 538,121,329 bytes (~538 MB / 513 MiB) into an empty Hugging Face cache (two ~269 MB safetensors files plus tokenizer and config files).
+- **Runtime:** 52 s end to end with 2 CPU threads, *including* the fresh model download. 45 s with 1 thread and a warm cache. Each chat reply (60-90 tokens) took about 2-4 s.
+- Colab should be slower (estimate 1-3 min total; downloads from HF are usually fast on Colab). Not tested on Colab itself, or with Colab's installed transformers version.
+- Results with temperature 0 (greedy) are deterministic and matched across repeated runs (3 full executions, including a 1-thread run):
+  - Top next tokens for "Once upon a time, there was a": little 12.5%, curious 10.4%, wise 9.8%.
+  - "The capital of France is": " the" 26.6%, " Paris" 8.1%.
+  - Invented scientist: a fabricated bio (born Oct 15 1934, San Francisco, UC Berkeley PhD, quantum mechanics).
+  - Sources prompt: invented titles plus "Dr. John Smith and Dr. Michael Thompson".
+  - Tomato: the neutral question gives "vegetable" and the leading "vegetables, right?" gives "not vegetables / fruit" (contradiction).
+  - Strawberry: "12 letters" (wrong); 17x23: nonsense (no number given).
+  - he/she after "The ___ said that" (%): nurse 8.7/12.7, babysitter 9.4/17.6, teacher 10.4/7.1, doctor 14.6/6.1, engineer 13.2/2.4, CEO 12.8/2.4, pilot 21.0/5.3.
+  - The pirate system prompt is only partly followed (tiny model); the notebook says so explicitly.
+- Sampled cells (temperature > 0) vary by run and hardware; the poem and goldfish cells were readable and appropriate in testing.
