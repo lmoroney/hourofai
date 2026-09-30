@@ -395,7 +395,7 @@ Answer in your own words:
 - Try the first lab, *Your First AI Model in an Hour*, to train your own image classifier: https://colab.research.google.com/github/lmoroney/hourofai/blob/main/lab1-first-model-in-an-hour/first_model_in_an_hour.ipynb
 - Invent your own fake person, book, or event and see if the chatbot makes up facts about it.
 - Find a question where the base model and the chat model give *really* different answers.
-- [LINK_PLACEHOLDER: more free resources from Laurence]
+- More from me: [my blog](https://laurencemoroney.com) and [my PyTorch book](https://link.amazon/B0eNBlqeN)
 
 Thanks for learning with me. Stay curious, and stay skeptical. — Laurence
 """)
